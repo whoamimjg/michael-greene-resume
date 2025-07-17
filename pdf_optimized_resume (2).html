@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Greene - Director of Information and Technology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: white;
+            font-size: 11pt;
+        }
+
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            padding: 0.5in;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 20px 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: 28pt;
+            font-weight: 300;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .header .title {
+            font-size: 14pt;
+            font-weight: 300;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            font-size: 10pt;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+            break-inside: avoid;
+        }
+
+        .section-title {
+            font-size: 16pt;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .job {
+            margin-bottom: 20px;
+            border-left: 3px solid #3498db;
+            padding-left: 15px;
+            break-inside: avoid;
+        }
+
+        .job-header {
+            margin-bottom: 10px;
+        }
+
+        .company-and-duration {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            font-size: 13pt;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .duration {
+            background: #ecf0f1;
+            color: #2c3e50;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 9pt;
+            font-weight: 500;
+        }
+
+        .job-title {
+            font-size: 12pt;
+            font-weight: 500;
+            color: #34495e;
+            font-style: italic;
+        }
+
+        .job-description {
+            list-style: none;
+            margin-top: 8px;
+        }
+
+        .job-description li {
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+            line-height: 1.4;
+            font-size: 10pt;
+        }
+
+        .job-description li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .education-details h3 {
+            color: #2c3e50;
+            font-size: 12pt;
+            margin-bottom: 3px;
+        }
+
+        .education-details p {
+            color: #7f8c8d;
+            font-size: 10pt;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .skill-item {
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10pt;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .skill-year {
+            background: #3498db;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 9pt;
+        }
+
+        /* Print-specific styles */
+        @media print {
+            body {
+                background: white !important;
+                margin: 0;
+                padding: 0;
+                font-size: 10pt;
+            }
+            
+            .container {
+                max-width: none;
+                width: 100%;
+                margin: 0;
+                padding: 0.3in;
+                box-shadow: none;
+            }
+            
+            .header {
+                background: #2c3e50 !important;
+                color: white !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+                margin-bottom: 20px;
+                page-break-inside: avoid;
+            }
+            
+            .section {
+                margin-bottom: 20px;
+            }
+            
+            .job {
+                page-break-inside: avoid;
+                margin-bottom: 15px;
+            }
+            
+            .section-title {
+                page-break-after: avoid;
+                margin-bottom: 12px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+            
+            .skill-item {
+                background: #f8f9fa !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .skill-year {
+                background: #3498db !important;
+                color: white !important;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+
+        @page {
+            margin: 0.5in;
+            size: letter;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Michael Greene</h1>
+            <div class="title">Director of Information and Technology</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Akron, OH</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>(330) 252-7737</span>
+                </div>
+                <div class="contact-item">
+                    <span>✉️</span>
+                    <span>m.greene@revitdev.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>🌐</span>
+                    <span>whoamimig.github.io/michael-greene-resume</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="job">
+                <div class="job-header">
+                    <div class="company-and-duration">
+                        <div class="company">Revitpay ICCK Inc.</div>
+                        <div class="duration">2023 - Present</div>
+                    </div>
+                    <div class="job-title">Director of Information and Technology</div>
+                </div>
+                <ul class="job-description">
+                    <li>Lead credit card payment integrations across multiple ecommerce platforms including WordPress, WooCommerce, 10 Webs, ACF, Checkout Champ, and other major platforms.</li>
+                    <li>Manage direct payment integrations with all major gateway providers including NMI, Accept.Blue, ipospays, and additional payment processing partners.</li>
+                    <li>Oversee application development projects as project manager, leveraging AI models and coordinating global development teams to deliver enterprise solutions.</li>
+                    <li>Spearheaded development of Numasync, a comprehensive financial application that processes bank transactions and reconciles them with merchant gateway transactions.</li>
+                    <li>Led development and implementation of gift card processing and management application, streamlining customer loyalty programs.</li>
+                    <li>Architected and deployed React-based forms for field agents and inside sales teams, improving operational efficiency and data collection.</li>
+                    <li>Serve as Microsoft 365 Global Administrator, managing complete tenant operations including company policies, Intune device management, Microsoft Exchange email applications, SharePoint, and OneDrive operations.</li>
+                    <li>Manage all AWS accounts with full IAM access, ensuring secure cloud infrastructure and optimal resource allocation.</li>
+                    <li>Oversee all GitHub repositories and maintain active development presence with over 27 accredited mentions on GitHub, demonstrating technical leadership and open-source contributions.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="company-and-duration">
+                        <div class="company">NCR</div>
+                        <div class="duration">2018 - 2023</div>
+                    </div>
+                    <div class="job-title">NCR/Aloha Field Service Technician</div>
+                </div>
+                <ul class="job-description">
+                    <li>Provide on-site technical support to top Fortune 500 companies, including Wendy's, McDonald's, Dunkin Donuts, and others, troubleshooting point of sale, credit card, and hardware issues.</li>
+                    <li>Collaborate closely with NCR customers to configure new installations in restaurants and national chains, ensuring seamless integration and functionality.</li>
+                    <li>Lead teams as the primary technician on job sites, overseeing the full installation of servers, workstations, IP printing solutions, and EMV credit card readers.</li>
+                    <li>Install and configure firewalls, switches, routers, NVRs, and IP cameras, ensuring secure and efficient network infrastructure.</li>
+                    <li>Maintain clear and effective communication with customers, explaining technical concepts in a non-technical manner for better understanding.</li>
+                    <li>Consistently adhere to industry best practices and standards, ensuring the highest level of quality and reliability in all installations and configurations.</li>
+                    <li>Conduct thorough testing and troubleshooting to identify and resolve issues promptly, minimizing downtime and maximizing customer satisfaction.</li>
+                    <li>Diligently document all installations, configurations, and troubleshooting activities, providing comprehensive and accurate records for future reference.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="company-and-duration">
+                        <div class="company">LMI Technologies</div>
+                        <div class="duration">2017 - 2021</div>
+                    </div>
+                    <div class="job-title">Low Voltage Cabling Engineer</div>
+                </div>
+                <ul class="job-description">
+                    <li>Led multiple teams in the installation of low voltage cabling, including cat5, cat3, and cat6 cables, in various businesses across the tri-state area, ensuring efficient and reliable network connectivity.</li>
+                    <li>Collaborated closely with the Network Operations Center (NOC) to install and configure new servers and routers in network racks, contributing to the seamless operation of the network infrastructure.</li>
+                    <li>Implemented mobile solutions for internet backup in college campuses in the Ohio area, ensuring uninterrupted connectivity and reliable internet access for students and faculty.</li>
+                    <li>Successfully ran and terminated thousands of feet of cat5 and cat6 cables, connecting them to switch panels and point of sale systems in large restaurants and restaurant chains, facilitating smooth operations and efficient communication.</li>
+                    <li>Coordinated with team members to ensure timely completion of projects, effectively managing resources and prioritizing tasks to meet deadlines.</li>
+                    <li>Maintained clear and concise documentation of all installations, ensuring accurate records and facilitating future maintenance and troubleshooting.</li>
+                    <li>Collaborated with clients to understand their specific requirements and provided tailored solutions, ensuring customer satisfaction and repeat business.</li>
+                    <li>Conducted thorough testing and quality checks to ensure the integrity and functionality of all installed cabling systems, minimizing downtime and maximizing performance.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <div class="company-and-duration">
+                        <div class="company">Magic Touch Point of Sale</div>
+                        <div class="duration">2010 - 2017</div>
+                    </div>
+                    <div class="job-title">Point of Sale Salesperson</div>
+                </div>
+                <ul class="job-description">
+                    <li>Successfully sold high-end point of sale systems to restaurants and retail locations across Ohio, Pennsylvania, and Indiana, generating over $1.2 million in hardware and software sales in 2014.</li>
+                    <li>Collaborated with large companies, such as Eden Pure Factory Outlets, to install new retail hardware and software across multiple locations, ensuring seamless integration and optimal functionality.</li>
+                    <li>Implemented multi-unit software in large restaurants and retail locations, enabling efficient scaling and optimization of their business operations.</li>
+                    <li>Oversaw installation teams, ensuring customer needs were met and promptly resolving any on-site issues.</li>
+                    <li>Established strong partnerships with credit card processing companies, including Vantiv, Mercury, Worldpay, Solupay, PC Charge, Authorize.net, and others, to enable seamless credit card processing through point of sale terminals using EDC software.</li>
+                    <li>Worked closely with reseller software companies, such as Aldelo, PC America, Retail Edge, and others, to customize solutions for customers, meeting their specific business requirements.</li>
+                    <li>Maintained clear and concise communication with clients, providing comprehensive training and support to ensure successful implementation and utilization of point of sale systems.</li>
+                    <li>Consistently met and exceeded sales targets, demonstrating strong negotiation and persuasion skills.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item">
+                <div class="education-details">
+                    <h3>Mentor High School</h3>
+                    <p>General Degree Computer Programming</p>
+                </div>
+                <div class="duration">1990 - 1993</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Skills & Certifications</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <span class="skill-name">CCNA (Cisco Certified Network Associate)</span>
+                    <span class="skill-year">2023</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">CompTIA Network+ Certification</span>
+                    <span class="skill-year">2023</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">Microsoft 365 w/ Generative AI Certification</span>
+                    <span class="skill-year">2024</span>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-name">CompTIA A+ Certification</span>
+                    <span class="skill-year">2013</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Personal Interests</h2>
+            <div style="padding: 10px 0; line-height: 1.6;">
+                <p style="margin-bottom: 8px; font-size: 10pt;"><strong>Golf Enthusiast:</strong> Avid golfer with over 6 years of experience, maintaining an 8 handicap through dedicated practice and course management.</p>
+                <p style="margin-bottom: 8px; font-size: 10pt;"><strong>Open Source Development:</strong> Active contributor to Home Assistant development community, creating and maintaining smart home automation solutions during personal time.</p>
+                <p style="margin-bottom: 0; font-size: 10pt;"><strong>Recreational Sports:</strong> Enjoy playing pool and billiards, appreciating the strategic and precision aspects of the game.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
